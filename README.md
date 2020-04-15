@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/berenar/DynaWall/blob/master/screenshot.png"/>
+  <img src="https://github.com/berenar/DynaWall/blob/master/screenshot.png"/ height="42">
 </p>
 
 # DynaWall
