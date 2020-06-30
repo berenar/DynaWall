@@ -1,0 +1,23 @@
+#!/bin/sh
+#Change MacOS wallpaper periodically
+
+#Get the path of the folder containing all wallpapers
+echo "Which folder contains the pictures?";
+read -e folder;
+
+#Get the period to change the wallpaper
+echo "How often should I change them? (minutes)";
+read -e period;
+echo "Changing the wallpaper every ${period} minutes"
+
+#Convert to seconds
+period=$((${period}*60));
+
+#Iterate all pictures in the folder
+for file in $(ls ${folder}); do 
+	echo $file;
+	wallpaper="${folder}/${file}"
+	echo "Changing wallpaper to: ${wallpaper}";
+	osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$wallpaper\"";
+	sleep $period;
+done
